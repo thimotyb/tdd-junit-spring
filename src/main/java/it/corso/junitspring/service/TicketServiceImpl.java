@@ -1,5 +1,7 @@
 package it.corso.junitspring.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +28,18 @@ public class TicketServiceImpl implements TicketService {
 
 	public void setDao(TicketDAO dao) {
 		this.dao = dao;
+	}
+
+	@Override
+	public Ticket getTicket(String tickNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Ticket> getAllTickets() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
