@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.corso.junitspring.dao.TicketDAO;
 import it.corso.junitspring.dto.Ticket;
 import it.corso.junitspring.service.TicketService;
  
@@ -54,8 +54,9 @@ public class MainRESTController {
     // http://localhost:8080/SpringMVCRESTful/Tickets.json
     @RequestMapping(value = "/Tickets", //
             method = RequestMethod.POST, //
+            consumes = { MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-    public int addTicket(Ticket t) {
+    public int addTicket(@RequestBody Ticket t) {
         return service.buyTicket(t.getPassengerName(), t.getPhone());
     }
  
@@ -66,8 +67,8 @@ public class MainRESTController {
 //    @RequestMapping(value = "/Tickets", //
 //            method = RequestMethod.PUT, //
 //            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-//    public Ticket updateTicket(Ticket emp) {
-//        return service.updateTicket(emp);
+//    public Ticket updateTicket(Ticket tick) {
+//        return service.updateTicket(tick);
 //    }
  
     // URL:
@@ -75,8 +76,8 @@ public class MainRESTController {
 //    @RequestMapping(value = "/Tickets/{empNo}", //
 //            method = RequestMethod.DELETE, //
 //            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-//    public void deleteTicket(@PathVariable("empNo") String empNo) {
-//        service.deleteTicket(empNo);
+//    public void deleteTicket(@PathVariable("empNo") String tickNo) {
+//        service.deleteTicket(tickNo);
 //    }
   
 }

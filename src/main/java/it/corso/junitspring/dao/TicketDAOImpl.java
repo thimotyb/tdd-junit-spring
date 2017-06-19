@@ -1,5 +1,8 @@
 package it.corso.junitspring.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import it.corso.junitspring.dto.Ticket;
@@ -7,10 +10,22 @@ import it.corso.junitspring.dto.Ticket;
 @Component
 public class TicketDAOImpl implements TicketDAO {
 
+	static int ticketCounter = 0;
+	static List<Ticket> tickets = new ArrayList<>();
+	
 	@Override
 	public int createTicket(Ticket ticket) {
-		// Obvious Implementation
-		return 1;
+		ticket.setTicketNo(++ticketCounter);
+		tickets.add(ticket);
+		return ticketCounter;
+	}
+	
+	public Ticket read(int ticketId) {		
+		return tickets.get(ticketId-1);
+	}
+	
+	public List<Ticket> readAll() {		
+		return tickets;
 	}
 
 }

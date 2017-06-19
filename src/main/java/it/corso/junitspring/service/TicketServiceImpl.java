@@ -32,17 +32,12 @@ public class TicketServiceImpl implements TicketService {
 
 	@Override
 	public Ticket getTicket(String tickNo) {
-		// Obvious Implementation
-		Ticket t = new Ticket();
-		t.setPassengerName("Thimoty");
-		t.setPhone("1234");
-		return t;
+		return dao.read(new Integer(tickNo));
 	}
 
 	@Override
-	public List<Ticket> getAllTickets() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Ticket> getAllTickets() {		
+		return dao.readAll();
 	}
 
 }

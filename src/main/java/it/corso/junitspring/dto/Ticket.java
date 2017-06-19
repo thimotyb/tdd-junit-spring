@@ -4,6 +4,7 @@ public class Ticket {
 
 	String passengerName;
 	String phone;
+	private int ticketNo;
 	
 	public String getPassengerName() {
 		return passengerName;
@@ -16,6 +17,12 @@ public class Ticket {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public int getTicketNo() {
+		return ticketNo;
+	}
+	public void setTicketNo(int ticketNo) {
+		this.ticketNo = ticketNo;
 	}
 	
 	

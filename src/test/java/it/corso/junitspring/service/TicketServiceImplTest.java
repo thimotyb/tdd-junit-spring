@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,5 +47,26 @@ public class TicketServiceImplTest {
 		assertEquals(1, result);
 		
 	}
+	
+	/**
+	 * MOck tickets
+	 * List<Ticket> l = new ArrayList<>();
+		Ticket t = new Ticket();
+		t.setPassengerName("Thimoty");
+		t.setPhone("1234");
+		l.add(t);
+		t = new Ticket();
+		t.setPassengerName("Thomas");
+		t.setPhone("1235");
+		l.add(t);
+		t = new Ticket();
+		t.setPassengerName("Percy");
+		t.setPhone("1236");
+		l.add(t);
+		t = new Ticket();
+		t.setPassengerName("Gordon");
+		t.setPhone("1237");
+		l.add(t);
+	 */
 
 }
