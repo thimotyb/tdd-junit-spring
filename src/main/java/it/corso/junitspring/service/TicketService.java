@@ -8,7 +8,7 @@ public interface TicketService {
 
 	int buyTicket(String passengerName, String phone);
 
-	Ticket getTicket(String tickNo);
+	Ticket getTicket(int tickNo);
 
 	List<Ticket> getAllTickets();
 	

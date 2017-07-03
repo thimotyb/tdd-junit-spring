@@ -19,24 +19,12 @@ public class TicketServiceImpl implements TicketService {
 		Ticket ticket = new Ticket();
 		ticket.setPassengerName(passengerName);
 		ticket.setPhone(phone);
-		return dao.createTicket(ticket);
+		return dao.save(ticket);
 	}
 
-	public TicketDAO getDao() {
-		return dao;
-	}
-
-	public void setDao(TicketDAO dao) {
-		this.dao = dao;
-	}
-
-	@Override
-	public Ticket getTicket(String tickNo) {
-		// Obvious Implementation
-		Ticket t = new Ticket();
-		t.setPassengerName("Thimoty");
-		t.setPhone("1234");
-		return t;
+		@Override
+	public Ticket getTicket(int tickNo) {
+			return dao.read(tickNo);
 	}
 
 	@Override

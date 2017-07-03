@@ -1,6 +1,6 @@
 package it.corso.junitspring.service;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
@@ -28,7 +28,7 @@ public class TicketServiceImplTest {
 	TicketDAO dao;
 	
 	@Autowired
-	@InjectMocks
+	//@InjectMocks
 	TicketServiceImpl service;
 	
 	@Before
@@ -39,9 +39,9 @@ public class TicketServiceImplTest {
 	@Test
 	public void shouldCreateNewTicket() {
 
-		when(dao.createTicket(any(Ticket.class))).thenReturn(1);
+		when(dao.save(any(Ticket.class))).thenReturn(1);
 		int result = service.buyTicket("Thimoty", "1234");
-		assertEquals(1, result);
+		assertTrue("risultato > 0", result>0);
 		
 	}
 
